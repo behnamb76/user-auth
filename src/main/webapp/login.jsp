@@ -9,6 +9,14 @@
     <div class="container">
         <h2>LOGIN</h2>
         <%
+            String signup = (String) request.getAttribute("signup");
+            if (signup != null) {
+        %>
+        <p><%= signup %></p>
+        <%
+            }
+        %>
+        <%
             String message = (String) request.getAttribute("message");
             if (message != null) {
         %>

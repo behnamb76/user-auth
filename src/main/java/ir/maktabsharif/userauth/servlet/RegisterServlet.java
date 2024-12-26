@@ -48,8 +48,8 @@ public class RegisterServlet extends HttpServlet {
 
         if(validate.isEmpty()){
             userService.register(userDTO);
-            req.getSession().setAttribute("firstname", firstName);
-            req.getRequestDispatcher("/dashboard").forward(req, resp);
+            req.setAttribute("signup", "Registered successfully. You can login to your account.");
+            req.getRequestDispatcher("/login.jsp").forward(req, resp);
         }else {
             req.setAttribute("Error",validate.toArray()[0]);
             req.getRequestDispatcher("/index.jsp").forward(req, resp);
